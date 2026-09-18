@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPT-6 Astra x Higgsfield — Student Creator Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF3E1;
+    --cream-2:#F6ECD6;
+    --red:#C4301F;
+    --red-dark:#9E2718;
+    --ink:#1B1710;
+    --sage:#5E6B44;
+    --line: rgba(27,23,16,0.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    letter-spacing:0.3px;
+    line-height:1.05;
+    text-transform:uppercase;
+  }
+  a{color:inherit;}
+  .wrap{max-width:840px;margin:0 auto;padding:0 24px;}
+
+  /* header */
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  .logo{
+    font-family:'Anton', sans-serif;
+    color:var(--red);
+    font-size:22px;
+    letter-spacing:1px;
+  }
+  nav{display:flex;gap:26px;font-size:14px;font-weight:500;}
+  nav span{opacity:0.55;}
+
+  /* hero */
+  .hero{
+    background:var(--red);
+    color:var(--cream);
+    padding:56px 0 48px;
+  }
+  .eyebrow{
+    display:inline-block;
+    border:1.5px solid var(--cream);
+    padding:6px 14px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .partner-line{
+    font-size:14px;
+    opacity:0.9;
+    margin:0 0 18px;
+    max-width:520px;
+  }
+  .hero h1{
+    font-size:44px;
+    margin:0 0 6px;
+    color:var(--cream);
+  }
+  .hero h1 span{color:var(--ink);background:var(--cream);padding:0 10px;display:inline-block;margin-top:6px;}
+  .hero p.lede{
+    font-size:16px;
+    max-width:540px;
+    margin:20px 0 30px;
+    opacity:0.95;
+  }
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--cream);
+    color:var(--red-dark);
+    font-weight:700;
+    text-decoration:none;
+    padding:14px 20px;
+    font-size:14px;
+    letter-spacing:0.3px;
+    border:1.5px solid var(--cream);
+  }
+  .btn.ghost{
+    background:transparent;
+    color:var(--cream);
+  }
+
+  /* section shells */
+  section{padding:44px 0;}
+  .section-label{
+    font-size:12px;
+    letter-spacing:1.5px;
+    font-weight:700;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-bottom:10px;
+  }
+  .callout{
+    background:var(--cream-2);
+    border-left:4px solid var(--sage);
+    padding:26px 30px;
+  }
+  .callout p{margin:0 0 12px;font-size:15px;}
+  .callout p:last-child{margin-bottom:0;}
+
+  /* setup steps */
+  .steps{counter-reset:step;padding:0;margin:22px 0 0;list-style:none;}
+  .steps li{
+    counter-increment:step;
+    display:flex;
+    gap:18px;
+    padding:18px 0;
+    border-top:1px solid var(--line);
+  }
+  .steps li:last-child{border-bottom:1px solid var(--line);}
+  .steps li::before{
+    content:counter(step);
+    font-family:'Anton', sans-serif;
+    font-size:22px;
+    color:var(--red);
+    flex:0 0 34px;
+  }
+  .steps .step-body h3{
+    font-family:'DM Sans', sans-serif;
+    text-transform:none;
+    font-weight:700;
+    font-size:16px;
+    margin:0 0 6px;
+  }
+  .steps .step-body p{margin:0;font-size:14.5px;color:#3a3428;}
+
+  /* prompt cards */
+  .prompt-card{
+    background:#fff;
+    border:1.5px solid var(--red);
+    margin:28px 0;
+  }
+  .prompt-head{
+    background:var(--red);
+    color:var(--cream);
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .prompt-num{
+    font-family:'Anton', sans-serif;
+    font-size:13px;
+    letter-spacing:1px;
+    opacity:0.85;
+  }
+  .prompt-title{
+    font-family:'Anton', sans-serif;
+    font-size:19px;
+    margin-top:2px;
+  }
+  .copy-btn{
+    background:var(--cream);
+    color:var(--red-dark);
+    border:none;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.4px;
+    padding:10px 16px;
+    cursor:pointer;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .copy-btn:active{transform:translateY(1px);}
+  .copy-btn.copied{background:var(--ink);color:var(--cream);}
+  .prompt-body{padding:22px;}
+  .prompt-meta{font-size:13px;color:var(--sage);font-weight:700;margin:0 0 14px;text-transform:uppercase;letter-spacing:0.5px;}
+  pre.prompt-text{
+    font-family:'DM Mono', monospace;
+    font-size:12.5px;
+    line-height:1.65;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    background:var(--cream-2);
+    border:1px solid var(--line);
+    padding:18px;
+    margin:0;
+    max-height:340px;
+    overflow-y:auto;
+    color:#241f16;
+  }
+
+  /* footer */
+  footer{
+    background:var(--cream-2);
+    border-top:1px solid var(--line);
+    padding:34px 0;
+    margin-top:20px;
+  }
+  footer .wrap{display:flex;flex-direction:column;gap:6px;}
+  footer .name{font-family:'Anton', sans-serif;color:var(--red);font-size:18px;}
+  footer .role{font-size:13.5px;font-weight:700;}
+  footer .links{font-size:13.5px;margin-top:4px;}
+  footer .links a{color:var(--red-dark);font-weight:700;text-decoration:none;}
+  footer .rights{font-size:12px;opacity:0.6;margin-top:14px;}
+
+  @media (max-width:600px){
+    .hero h1{font-size:32px;}
+    .prompt-head{flex-direction:column;align-items:flex-start;}
+    .copy-btn{width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">AI WITH UNNATI</div>
+    <nav>
+      <span>Instagram</span>
+      <span>Guides</span>
+      <span>Maester Labs</span>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Higgsfield x GPT-6 Astra — Official Partner Content with @aiwithunnati</div>
+    <h1>GPT-6 ASTRA<br><span>X HIGGSFIELD</span></h1>
+    <p class="lede">This guide has the free student offer, the plugin setup, and the exact prompts used to build the three examples in the reel. Free for college students for 4 months, only until October 31st.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://higgsfield.ai/s/gpt-6-astra-x-higgsfield-use-cases-vol-2-aiwithunnati-KwtmXN" target="_blank" rel="noopener">Higgsfield x Astra Campaign →</a>
+      <a class="btn ghost" href="https://chatgpt.com/students/2026/?utm_source=chatgpt.com" target="_blank" rel="noopener">Claim Free GPT-6 Astra for Students →</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">Setup Tutorial</div>
+    <h2 style="font-size:26px;margin:0 0 18px;">Connect Higgsfield to GPT-6 Astra</h2>
+    <div class="callout">
+      <p>You only need to do this once. After it's connected, every prompt below runs straight inside ChatGPT.</p>
+      <p><strong>Already have a ChatGPT subscription?</strong> Skip straight to Step 2 — just connect the Higgsfield plugin and you're ready to go.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="step-body">
+          <h3>Claim your free GPT-6 Astra access</h3>
+          <p>Open the student offer link above, sign in with your university/college email, and activate the free 4-month plan before October 31st.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Open Plugins inside ChatGPT</h3>
+          <p>Inside a chat, click the plugins/tools icon and search for "Higgsfield" in the Plugins Directory.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Add the Higgsfield plugin</h3>
+          <p>Click "Add Higgsfield plugin," then sign in to (or create) your free Higgsfield account to link the two.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Start a new chat with GPT-6 Astra</h3>
+          <p>Select GPT-6 Astra as your model, and make sure the Higgsfield plugin is toggled on for that chat.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-body">
+          <h3>Paste a prompt and generate</h3>
+          <p>Copy any of the three prompts below directly into the chat. Astra handles the research and direction, Higgsfield handles the Blender build, rendering, and final video.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding-top:6px;">
+  <div class="wrap">
+    <div class="section-label">Copy-Paste Prompts</div>
+    <h2 style="font-size:26px;margin:0 0 6px;">The 3 Reel Examples</h2>
+    <p style="font-size:14.5px;max-width:560px;margin:0 0 6px;color:#3a3428;">Same order as the reel — chipmaking machine, apartment renovation, then the Denisovan research reconstruction. Tap "Copy Prompt," paste into your Astra + Higgsfield chat, and generate.</p>
+
+    <!-- PROMPT 1 -->
+    <div class="prompt-card">
+      <div class="prompt-head">
+        <div>
+          <div class="prompt-num">01 / 03</div>
+          <div class="prompt-title">Microchip Manufacturing Video</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt('prompt1', this)">Copy Prompt</button>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-meta">30s · 1:1 square · Blender + Higgsfield render</p>
+        <pre class="prompt-text" id="prompt1">Create a 30-second square 1:1 technical visualization explaining how a modern semiconductor chip is manufactured, styled exactly like a premium Blender engineering animation.
+
+Use Blender for all 3D objects and animation. Use Higgsfield for the final rendered video generation/compositing.
+
+IMPORTANT:
+This should NOT look like a cinematic factory documentary. It should look like a clean, minimal, high-end engineering visualization on a very light grey/white studio background.
+
+Keep the camera mostly in an elevated 3/4 isometric perspective. Use soft shadows, physically plausible materials, extremely clean geometry, and smooth mechanical animation.
+
+Keep this title permanently visible near the upper-left/top area:
+"$400M Chipmaking Machine"
+Use bold black sans-serif text.
+
+Do not add narration, subtitles, people, decorative backgrounds or unnecessary graphics.
+
+The animation must follow this sequence:
+
+SHOT 1 - COMPLETE CHIPMAKING MACHINE
+0:00-0:00.9
+Begin with a complete large semiconductor fabrication/lithography machine shown as one compact industrial unit.
+The machine should be made of multiple dark charcoal rectangular modules with silver structural framing, pipes, precision mechanical elements and white/silver equipment sections.
+Camera:
+elevated 3/4 isometric view
+object centered slightly left
+light grey seamless background
+soft shadow underneath
+Hold briefly so the viewer understands the complete machine.
+
+SHOT 2 - EXPLODED MACHINE
+approximately 0:00.9-0:05.4
+Perform a smooth exploded-view animation.
+The external dark machine panels and modules move outward from the center while the internal mechanical frame stays visible.
+Separate:
+dark exterior panels
+upper roof plates
+side modules
+internal silver structural frame
+small mechanical assemblies
+supporting systems
+The pieces should move into a clean exploded engineering layout without spinning randomly.
+Keep every component spatially related to the original machine.
+Hold the exploded view for several seconds.
+Then reverse the animation.
+All machine panels and components smoothly slide back together until the complete machine is rebuilt.
+
+SHOT 3 - CIRCULAR OPTICAL / LITHOGRAPHY ASSEMBLY
+approximately 0:07-0:08.7
+Hard cut to a large circular precision optical assembly.
+It should look like a complex lithography optical chamber with a dark central circular mirror/lens, metallic rings, brackets, small mechanical parts and cables.
+Add several vivid purple light rays showing the optical path.
+The purple beams should enter and reflect through the assembly in a technically illustrative way.
+Camera stays clean and orthographic-like, 3/4 front view.
+
+SHOT 4 - MIRROR / OPTICAL STAGE
+approximately 0:08.7-0:10.4
+Cut to a simplified optical stage mounted on a rectangular dark base.
+Include several circular mirrors or optical elements arranged underneath a silver upper structure.
+Animate bright purple beams travelling between the optical surfaces.
+The beam path should be immediately readable.
+
+SHOT 5 - WAFER EXPOSURE MODULE
+approximately 0:10.4-0:11.7
+Cut to a compact rectangular semiconductor exposure stage.
+Place a small square chip/wafer target in the center.
+Above it, show a curved dark optical element.
+Several purple beams converge toward the central square target.
+Clean engineering model, dark base, metallic components.
+
+SHOT 6 - MULTI-LAYER OPTICAL TOWER
+approximately 0:11.7-0:13.2
+Cut to a tall vertical precision assembly made from several stacked optical/mechanical layers.
+Use metallic supports and multiple circular optical surfaces.
+Show the purple beam bouncing through the different levels from top to bottom.
+The tower is isolated against the same light-grey background.
+
+SHOT 7 - WAFER PROCESSING PLATFORM
+approximately 0:13.2-0:15.5
+Cut to a rectangular processing platform.
+On the right side place a large black circular wafer stage.
+On the left is a clean white rectangular processing zone.
+Above the circular stage, show a purple grid or array projected onto the wafer surface.
+A thin purple beam should enter from above.
+Use silver rails and precision mechanical details around the platform.
+
+SHOT 8 - SILICON WAFER
+approximately 0:15.5-0:17.3
+Cut to a single black circular silicon wafer floating slightly above the ground plane.
+The wafer contains a very regular grid of hundreds of small pale-purple rectangular dies.
+Camera slowly pushes closer.
+The wafer should have a subtle reflective rim and realistic thickness.
+
+SHOT 9 - EXTRACT ONE DIE
+approximately 0:17.3-0:19.5
+One small square die separates from the wafer.
+The large wafer moves out of frame while the selected die remains floating in the center.
+The die is a dark square containing a grid of smaller purple-grey cells.
+Allow it to rotate slightly in 3D.
+
+SHOT 10 - PLACE DIE ON GREEN PACKAGE
+approximately 0:19.5-0:20.5
+A green processor substrate/package appears beneath the die.
+The die lowers smoothly onto the center of the green substrate.
+Show tiny metallic contact details around the substrate edges.
+
+SHOT 11 - PROCESSOR HEAT SPREADER
+approximately 0:20.5-0:21.5
+A large brushed-silver processor heat spreader descends from above and covers the die.
+The movement should feel mechanically precise.
+
+SHOT 12 - FINISHED PROCESSOR HERO SHOT
+approximately 0:21.5-0:30
+Show the completed desktop-style processor package.
+Green PCB substrate.
+Large silver metal heat spreader.
+Tiny gold/contact details.
+Clean realistic product geometry.
+Print the word:
+"PROCESSOR"
+on the top surface in small dark lettering.
+Camera:
+close 3/4 product angle
+very slow subtle push-in
+slight controlled rotation if needed
+Hold this hero shot through the end.
+
+VISUAL RULES
+Use one consistent lighting setup across the entire animation.
+Background:
+#f1f2f3-style light neutral grey.
+Materials:
+dark charcoal machine panels
+silver/aluminium structures
+black optical elements
+green PCB
+purple optical beams
+Purple beams should glow slightly but never bloom excessively.
+Geometry must remain mechanically believable.
+Do not morph one object incorrectly into another. Use clean cuts between the major manufacturing stages.
+Animation should be smooth and precise, like an engineering explainer made in Blender.
+No handheld movement.
+No depth-of-field-heavy cinematic shots.
+No humans.
+No voice-over.
+No additional captions beyond the persistent title.
+
+Final output:
+30 seconds
+1:1 square
+30 fps
+high-detail 3D
+clean engineering visualization
+Blender-style physically based rendering.</pre>
+      </div>
+    </div>
+
+    <!-- PROMPT 2 -->
+    <div class="prompt-card">
+      <div class="prompt-head">
+        <div>
+          <div class="prompt-num">02 / 03</div>
+          <div class="prompt-title">Apartment Renovation Video</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt('prompt2', this)">Copy Prompt</button>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-meta">27s · 1:1 square · Blender + Higgsfield render</p>
+        <pre class="prompt-text" id="prompt2">Create a 27-second square 1:1 apartment redesign video showing an ordinary apartment being analysed and completely redesigned using GPT-6 Astra + Blender.
+
+The final video should feel like a believable AI-assisted interior-design case study, mixing real phone footage, Blender modelling footage, 3D walkthroughs, floating cost labels and photorealistic before/after comparisons.
+
+Use Blender to recreate the apartment layout and redesign the space.
+Maintain the exact same apartment geometry across the before footage, 3D model and final renovated renders. Doors, windows, balcony opening, room proportions and camera positions should correspond to each other.
+
+STYLE OF RENOVATION
+Transform a plain older apartment into a dark, warm, modern masculine interior.
+Use:
+dark charcoal walls
+black ceilings in some rooms
+dark wood wall panels
+warm hidden LED strip lighting
+brown/cognac accent cushions
+dark modern cabinetry
+warm wood flooring where appropriate
+minimal furniture
+soft warm lamps
+black fixtures
+clean contemporary surfaces
+Do not make it luxury-palace style. Keep it believable as a renovated normal apartment.
+
+SEQUENCE
+
+SHOT 1 - FINGER SNAP BEFORE/AFTER HOOK
+0:00-approximately 0:00.7
+POV smartphone-style footage from the apartment entrance looking into the living room.
+A realistic male forearm and hand extend into frame.
+The fingers are positioned ready to snap.
+BEFORE APARTMENT:
+off-white walls
+beige carpet
+black leather sofa on the left
+small basic wooden coffee table
+TV and black TV stand on the right
+window and sliding balcony door at the far end
+ordinary daylight
+slightly dated rental-apartment appearance
+As the fingers snap, instantly transform the exact same room into the renovated version.
+Keep the hand in approximately the same position during the transformation.
+AFTER:
+dark charcoal walls
+warm wood floor
+modern dark sectional sofa
+brown/cognac cushions
+wood feature wall
+large dark TV unit
+warm LED strip lighting
+modern coffee table
+more atmospheric interior lighting
+The transition should happen exactly on the finger snap.
+
+SHOT 2 - BLENDER FLOORPLAN
+approximately 0:00.7-0:02.2
+Cut to a computer screen showing Blender.
+Show the apartment as a 3D cutaway / dollhouse floor plan from above at an isometric angle.
+Rooms and walls should be clearly modelled.
+Include furniture inside several rooms.
+Make the Blender interface genuinely visible around the viewport so it looks like Astra has actually opened Blender and created the apartment model.
+Overlay large white text at the bottom:
+"I redesigned my apartment"
+Under it in smaller text:
+"with GPT-6 Astra + Blender"
+
+SHOT 3 - ORIGINAL BEDROOM
+approximately 0:02.2-0:02.6
+Very brief real-phone-video shot of the bedroom before renovation.
+Show:
+beige carpet
+light walls
+window
+simple bed with dark blue bedding
+
+SHOT 4 - ORIGINAL HALLWAY
+approximately 0:02.6-0:03.2
+Cut to the apartment entrance hallway before renovation.
+Show:
+off-white walls
+beige carpeting
+plain white entrance door
+small narrow table
+coat hanging near the door
+
+SHOT 5 - ORIGINAL BALCONY
+approximately 0:03.2-0:03.6
+Brief shot from the balcony.
+White plastic chair.
+Black metal railing.
+Grass and neighbouring residential building visible outside.
+
+SHOT 6 - EMPTY 3D LIVING ROOM
+approximately 0:03.6-0:04.3
+Enter the Blender recreation.
+Show the living room empty first.
+Dark charcoal/green-grey walls.
+Wood flooring.
+Window and glass balcony door positioned correctly at the far end.
+Camera faces toward the windows.
+
+SHOT 7 - LIVING ROOM BUILD
+approximately 0:04.3-0:07.5
+Build the redesigned living room progressively.
+Furniture appears in stages.
+First install a modern dark sofa with brown leather/cognac accent cushions.
+Then install the dark TV cabinet and large television on the opposite wall.
+Then add the coffee table and remaining decor.
+Use floating black rounded rectangular price labels with thin pointer lines.
+Price text is white, dollar value in warm orange.
+Show these labels:
+SOFA
+$1,427
+TV CABINET
+$3,617
+COFFEE TABLE
+$1,040
+Labels should track the corresponding furniture.
+Camera performs a slow smooth walkthrough/pan across the room.
+
+SHOT 8 - EMPTY BEDROOM
+approximately 0:07.5-0:08.8
+Cut to an empty 3D bedroom.
+Window centered on one wall.
+Dark walls.
+Warm wood floor.
+
+SHOT 9 - BEDROOM BUILD
+approximately 0:08.8-0:10.5
+Install the redesigned bedroom.
+Large modern bed with dark bedding.
+Warm brown bench or upholstered feature at the foot/side.
+Desk against the wall.
+Nightstand.
+Show price labels:
+BED + MATTRESS
+$1,811
+NIGHTSTAND
+$384
+DESK
+$1,000
+Keep the same black label / orange price visual language.
+
+SHOT 10 - EMPTY KITCHEN
+approximately 0:10.5-0:11.2
+Cut to a narrow empty kitchen volume.
+Dark walls.
+Camera looking directly toward the end wall.
+
+SHOT 11 - KITCHEN BUILD
+approximately 0:11.2-0:13.3
+Progressively install:
+dark upper cabinets
+dark wood lower cabinets
+long countertop
+black electric range
+Show:
+CABINETRY
+$9,702
+COUNTERTOP
+$2,060
+RANGE
+$611
+Use a smooth forward-moving walkthrough.
+
+SHOT 12 - EMPTY BATHROOM
+approximately 0:13.3-0:14.2
+Show empty narrow bathroom volume.
+Dark walls and floor.
+
+SHOT 13 - BATHROOM BUILD
+approximately 0:14.2-0:15.8
+Add:
+white bathtub
+modern vanity
+countertop/sink
+toilet
+dark wall finishes
+warm lighting
+Show:
+BATHTUB
+$859
+VANITY
+$2,102
+Continue any additional bathroom-fixture label only if clearly attached to the correct item.
+
+SHOT 14 - HALLWAY / STORAGE DESIGN
+approximately 0:15.8-0:17.7
+Walk through the redesigned dark hallway.
+Show new storage/built-ins and laundry/storage areas.
+Maintain the same dark modern visual style.
+Use subtle warm lighting and realistic door geometry.
+
+SHOT 15 - BALCONY REDESIGN
+approximately 0:17.7-0:19.0
+Show the balcony in Blender.
+The balcony initially has a plain unfinished floor.
+Install warm wood-style decking.
+Display:
+DECKING
+$379
+Then add a small round dark table and modern outdoor chairs to create a compact seating area.
+
+SHOT 16 - BEFORE / AFTER BEDROOM
+approximately 0:19.0-0:20.3
+Create horizontal split-screen comparison.
+Upper half labelled:
+BEFORE
+Show the original bedroom.
+Lower half labelled:
+AFTER
+Show the same bedroom fully renovated with:
+dark walls
+modern bed
+wood feature wall
+warm bedside lighting
+dark bedding
+A thin warm orange dividing line separates BEFORE and AFTER.
+
+SHOT 17 - BEFORE / AFTER KITCHEN
+approximately 0:20.3-0:21.3
+Same split layout.
+BEFORE:
+old narrow light-coloured kitchen.
+AFTER:
+dark modern cabinetry, warm under-cabinet lighting, upgraded appliances and surfaces.
+
+SHOT 18 - BEFORE / AFTER BATHROOM
+approximately 0:21.3-0:22.1
+BEFORE:
+light dated bathroom.
+AFTER:
+dark modern bathroom with upgraded vanity, lighting and bathtub area.
+
+SHOT 19 - BEFORE / AFTER ENTRY
+approximately 0:22.1-0:22.9
+BEFORE:
+plain beige/light entrance corridor.
+AFTER:
+dark walls, wood floor and warm integrated lighting.
+
+SHOT 20 - BEFORE / AFTER BALCONY
+approximately 0:22.9-0:23.7
+BEFORE:
+white plastic chair and plain balcony.
+AFTER:
+wood decking, dark modern chairs, round table and warm tabletop light.
+
+SHOT 21 - BEFORE / AFTER LIVING ROOM
+approximately 0:23.7-0:25.0
+BEFORE:
+original black leather sofa, carpet, simple coffee table and basic TV setup.
+AFTER:
+same viewpoint showing the redesigned dark living room with wood floor, modern sofa, brown accent cushions, feature wall and warm LED lighting.
+
+SHOT 22 - PROJECT BUDGET
+approximately 0:25.0-0:27.0
+Keep the living-room BEFORE/AFTER comparison visible behind the graphic.
+Overlay a large semi-transparent dark rounded rectangular budget panel.
+Header:
+PROJECT BUDGET
+Rows:
+Renovation and built-ins $65,146
+Furniture and decor $9,001
+Appliances and TV $3,680
+Delivery, assembly and storage $2,706
+Design, drawings and permits $3,300
+Construction contingency $9,840
+Then large:
+TOTAL
+$93,673
+Use white labels and make "$93,673" large warm orange.
+At the bottom include:
+Labor, delivery and tax included
+15% construction contingency included
+
+DESIGN RULES
+Use clean sans-serif typography.
+Floating cost cards:
+nearly-black background
+slight rounded corners
+small thin pointer line to object
+category text white
+price warm orange
+Do not invent additional rooms.
+Keep the room proportions consistent from shot to shot.
+The real BEFORE shots should feel like ordinary smartphone footage.
+The Blender section should deliberately retain a slightly simplified 3D-rendered look.
+The final AFTER images should become much more photorealistic than the Blender planning shots.
+Transitions should be quick and clean.
+No narrator.
+No unrelated captions.
+No flashy music-video transitions.
+
+Final:
+27 seconds
+1:1 square
+30 fps.</pre>
+      </div>
+    </div>
+
+    <!-- PROMPT 3 -->
+    <div class="prompt-card">
+      <div class="prompt-head">
+        <div>
+          <div class="prompt-num">03 / 03</div>
+          <div class="prompt-title">Denisovan Research Documentary</div>
+        </div>
+        <button class="copy-btn" onclick="copyPrompt('prompt3', this)">Copy Prompt</button>
+      </div>
+      <div class="prompt-body">
+        <p class="prompt-meta">25s · 3:4 · Blender + GPT Image 2.5 + Seedance 2.5 via Higgsfield</p>
+        <pre class="prompt-text" id="prompt3">Create a 25-second, 3:4 documentary about Denisovans using Blender, GPT Image 2.5 and Seedance 2.5 through Higgsfield. Let's work step by step.
+
+Start with this Nature article:
+https://www.nature.com/articles/d41586-026-02810-z
+
+Open it in the built-in browser on the right. Then visibly research 6-8 relevant scientific sources about Denisovan anatomy, genetics, habitats and daily life. Compare the evidence and keep concise research notes, distinguishing established findings from reconstruction choices.
+
+Next, open Blender and build an evidence-informed Denisovan character. Show the actual modeling process, including any imported base mesh and your modifications.
+
+Finish with a centered, straight-on view for a match cut. Stop there. We'll develop the photorealistic character sheet and documentary footage in the following steps.
+
+CONTINUE FROM THE CENTERED BLENDER RECONSTRUCTION
+
+Preserve the Denisovan character's skull proportions, facial structure and overall anatomy across every subsequent shot.
+
+The goal is to visually move from scientific research -> anatomical reconstruction -> photorealistic reconstruction -> living Denisovan documentary footage.
+
+Use the same restrained visual identity throughout.
+
+FORMAT
+3:4 documentary frame.
+Dark charcoal graphic backgrounds for the research/modeling portions.
+Use a bright acid-lime accent color.
+Persistent branding/layout elements should resemble a scientific research case study.
+Upper-left:
+small lime rectangle reading
+NEW NATURE FINDINGS
+with a small date underneath.
+Upper-right:
+HIGGSFIELD
+GPT-6 ASTRA
+Use clean bold white sans-serif typography.
+
+During the research/modeling portion place a thin lime outlined information strip along the bottom identifying the tools:
+GPT-6 Astra
+RESEARCH + DIRECTION
+Blender
+Higgsfield
+GPT Image 2.5 · Seedance 2.5
+
+PART 1 - FINAL OPENING DOCUMENTARY SHOT
+Begin with the finished photorealistic Denisovan outdoors in a cold mountainous environment.
+Adult male.
+Strong compact prehistoric build.
+Medium-dark brown skin.
+Short tightly curled dark hair.
+Heavy brow region.
+Broad nose and robust facial anatomy.
+Simple rough brown hide clothing around the waist.
+He is carrying a long wooden spear.
+Environment:
+grey rocky mountain slope
+large boulders
+cold mist
+cloudy overcast sky
+desaturated natural colours
+Use shallow documentary-style camera movement.
+At approximately the opening second, show large centered text:
+GPT-6 ASTRA RECREATED
+then below it in large acid-lime:
+A DENISOVAN.
+Keep the human action visible behind the typography.
+
+PART 2 - SHOW THE ASTRA PROMPT
+Hard cut at approximately 2 seconds to the dark research-interface graphic.
+Heading:
+01 / THE PROMPT
+Large title:
+Start with the new evidence.
+Display the original Astra prompt inside a large rounded dark chat box, exactly as supplied above.
+The viewer should clearly understand that Astra has been instructed to research the evidence before constructing the character.
+
+PART 3 - RESEARCH SOURCES
+Transition at approximately 3 seconds.
+Heading:
+02 / ASTRA RESEARCHING
+Main title:
+8 studies. One reconstruction.
+Show actual-looking scientific source cards one after another.
+The first prominent card should show the Nature article headline:
+"Who were the Denisovans?
+Rich trove of fossils and tools paints new picture"
+Then show another academic/scientific article card concerning Denisovan remains from Southwest China.
+Then show a scientific skull/fossil anatomy image containing several skull and fossil views.
+Make it look like Astra is comparing multiple papers, not relying on a single source.
+Add small category labels such as:
+NEW FOSSILS
+FIFTH INDIVIDUAL
+SKULL ANATOMY
+Then show a concise research note card saying approximately:
+"I've compared eight primary studies."
+and:
+"Research -> Blender"
+Do not fabricate dramatic claims unsupported by the papers. Where appearance is reconstructed rather than directly known, treat it visually as reconstruction.
+
+PART 4 - BLENDER BASE BODY
+At approximately 5 seconds switch into Blender.
+Show the actual Blender interface.
+Start with a neutral grey full-body male base mesh in an anatomical A-pose/T-pose against the grey Blender viewport.
+Rotate or reframe toward the head.
+
+PART 5 - HEAD SCULPT
+Move into a close-up of the grey head mesh.
+Show genuine intermediate modelling changes over time.
+Modify:
+cranial proportions
+heavy supraorbital/brow region
+wider mid-face
+broad nose
+jaw and lower-face mass
+cheek structure
+overall robust proportions
+Do not instantly morph from generic human to finished person.
+The viewer should see successive modelling states inside Blender.
+Maintain a neutral straight-ahead or slight 3/4 presentation suitable for a match cut.
+
+PART 6 - MATERIAL / SKIN TRANSITION
+Around 7.3-8.8 seconds, transition the grey sculpt into a skin-toned model.
+First show a simple beige skin material.
+Then progressively add realistic:
+skin texture
+subsurface scattering
+dark brown eyes
+natural lips
+short tightly curled dark hair
+subtle facial asymmetry
+realistic pores
+Use a smooth match-cut from the exact same camera angle so that the grey Blender reconstruction appears to become a photorealistic human.
+
+PART 7 - PHOTOREALISTIC HEAD
+Approximately 8.8-10.5 seconds.
+Hold a photorealistic bust/head portrait against a neutral grey background.
+Adult male Denisovan reconstruction.
+Strong brow ridge.
+Broad nose.
+Robust face.
+Dark eyes.
+Short tightly curled hair.
+Medium-dark brown skin.
+Lighting should resemble neutral anthropological reconstruction photography, not glamour photography.
+Camera slowly pushes in.
+
+PART 8 - CHARACTER SHEET
+Approximately 10.5-12.4 seconds.
+Show a scientific character sheet.
+Include:
+full-body front view
+full-body side or alternate view
+large close-up head view
+Character wears a simple rough prehistoric hide wrap around the waist.
+Keep body proportions consistent.
+Use a neutral grey studio background.
+
+PART 9 - MATCH CUT INTO LIVING CHARACTER
+Around 12.4-13.2 seconds use the reconstructed full-body pose to transition into photoreal documentary footage.
+Initially slightly soft/motion blurred, then resolve into focus.
+Place the Denisovan in the same cold high-altitude rocky environment shown in the opening.
+
+PART 10 - WALKING THROUGH ROCKY TERRAIN
+Approximately 13.2-14 seconds.
+The Denisovan walks naturally across a rocky plateau.
+Handheld documentary camera follows him.
+He carries a long wooden spear.
+Heavy clouds and fog obscure distant mountains.
+Naturalistic movement only.
+
+PART 11 - WORKING WITH SPEAR / STONE
+Approximately 14-16.9 seconds.
+Cut to the Denisovan crouching beside a large lichen-covered rock.
+He uses the long wooden spear/tool against the rock area, appearing to work, probe or prepare material.
+Camera angle is low-medium and observational.
+Windy, cold outdoor atmosphere.
+Keep clothing and character identity identical.
+
+PART 12 - SPEAR ACTION
+Approximately 16.9-18.9 seconds.
+Closer side view.
+The Denisovan raises and manipulates the wooden spear.
+Show believable body weight and muscle movement.
+Do not make the movement heroic or action-movie-like.
+The scene should feel like reconstructed daily survival behaviour.
+
+PART 13 - TOOL MAKING CLOSE-UP
+Approximately 18.9 seconds to the end.
+Hard cut to an extreme close-up of his hands working with stone and bone.
+Large rounded stone held or positioned above a pale long bone resting on another stone.
+Show repeated controlled impact/tool-making motion.
+Hands should be dusty and realistic.
+Natural shallow depth of field.
+Rock texture, bone surface and skin should be extremely detailed.
+Hold this tactile archaeological reconstruction shot through the ending.
+
+VISUAL STYLE
+The documentary footage should feel like evidence-informed natural-history reconstruction.
+No fantasy caveman styling.
+No modern items.
+No jewellery.
+No metal weapons.
+No cinematic fireballs or exaggerated tribal imagery.
+Cold muted environment:
+grey sky
+grey/green rock
+fog
+natural brown skin and hide clothing.
+Research portions should feel precise and graphical.
+Documentary portions should feel photorealistic, physical and slightly handheld.
+Maintain exact character continuity across:
+Blender sculpt
+skin reconstruction
+portrait
+character sheet
+outdoor footage
+hand close-up.
+Use match cuts wherever possible so it looks as though the researched 3D reconstruction literally becomes the living person.</pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="name">@aiwithunnati</div>
+    <div class="role">Unnati Tripathi — AI Educator &amp; Content Creator · CEO &amp; Co-Founder, Maester Labs</div>
+    <div class="links"><a href="https://instagram.com/aiwithunnati" target="_blank" rel="noopener">instagram.com/aiwithunnati</a></div>
+    <div class="rights">© 2026 Unnati Tripathi. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+function copyPrompt(id, btn){
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(function(){
+    const original = btn.textContent;
+    btn.textContent = "Copied ✓";
+    btn.classList.add('copied');
+    setTimeout(function(){
+      btn.textContent = original;
+      btn.classList.remove('copied');
+    }, 1800);
+  });
+}
+</script>
+
+</body>
+</html>
