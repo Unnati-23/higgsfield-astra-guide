@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Higgsfield API 100% Cashback | 3 GPT Astra App Prompts | Unnati Tripathi</title>
+<meta name="description" content="Connect the Higgsfield API to GPT Astra and build 3 AI apps with copy-paste prompts. A free guide by Unnati Tripathi (@aiwithunnati), in partnership with Higgsfield.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+<style>
+:root {
+  --cream:#FEF8E7; --cream-2:#FBEEDD; --red:#D02B2F; --red-deep:#B32226;
+  --ink:#222222; --body:#4A4A48; --muted:#7A7A76; --sage:#8A9B7E; --sage-bg:#F3F1DF; --line:#E6DFCB;
+  --display:"Anton","Oswald","Impact","Arial Narrow",sans-serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*,*::before,*::after { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:120px; -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--cream); color:var(--body); font-family:var(--sans); font-size:18px; line-height:1.65; }
+a { color:var(--red); }
+:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+.wrap { max-width:760px; margin:0 auto; padding:0 24px; }
+
+/* Header */
+.site-header { position:sticky; top:0; z-index:50; background:var(--cream); border-bottom:2px solid var(--line); padding:calc(22px + env(safe-area-inset-top,0px)) 16px 18px; text-align:center; }
+.brand { font-family:var(--display); color:var(--red); font-size:clamp(26px,6vw,34px); letter-spacing:.06em; text-decoration:none; text-transform:uppercase; line-height:1; display:inline-block; }
+.nav { display:flex; justify-content:center; flex-wrap:wrap; gap:6px 34px; margin-top:16px; }
+.nav a { color:var(--muted); text-decoration:none; font-size:15px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; }
+.nav a:hover, .nav a.on { color:var(--ink); }
+
+/* Hero */
+.hero { background:var(--red); color:var(--cream); padding:64px 0 72px; }
+.byline { display:flex; flex-wrap:wrap; align-items:center; gap:14px 18px; font-size:17px; color:rgba(254,248,231,.85); }
+.byline strong { font-weight:500; color:var(--cream); }
+.pill { display:inline-flex; align-items:center; gap:10px; background:rgba(254,248,231,.12); color:var(--cream); text-decoration:none; font-family:var(--display); letter-spacing:.12em; font-size:15px; padding:9px 16px; text-transform:uppercase; }
+.pill:hover { background:rgba(254,248,231,.22); }
+.pill svg { width:17px; height:17px; }
+.tag { display:inline-block; margin-top:26px; background:var(--cream); color:var(--red); font-family:var(--display); letter-spacing:.12em; font-size:16px; padding:8px 16px; text-transform:uppercase; }
+.hero h1 { font-family:var(--display); font-weight:400; font-size:clamp(46px,11vw,88px); line-height:.98; margin:18px 0 22px; text-transform:uppercase; color:var(--cream); letter-spacing:.005em; }
+.campaign { font-size:clamp(20px,4.6vw,24px); line-height:1.4; margin:0 0 16px; color:var(--cream); }
+.campaign b { font-weight:700; }
+.hero p.lead { font-size:clamp(18px,4.4vw,21px); line-height:1.7; margin:0; color:rgba(254,248,231,.92); }
+.partner { margin-top:26px; font-size:15px; letter-spacing:.04em; color:rgba(254,248,231,.8); }
+.partner b { color:var(--cream); font-weight:700; }
+
+/* Source box */
+.source { margin:48px 0 0; background:var(--cream-2); border-left:6px solid var(--red); padding:24px 26px; font-size:19px; line-height:1.6; }
+.source b { color:var(--ink); }
+.source a { font-weight:500; text-underline-offset:3px; word-break:break-word; }
+.utm { display:block; margin-top:10px; font-family:var(--mono); font-size:13px; color:var(--muted); word-break:break-all; }
+
+/* Sections */
+.section { padding:56px 0 8px; }
+.kicker { font-family:var(--display); color:var(--red); font-size:17px; letter-spacing:.14em; text-transform:uppercase; margin:0 0 8px; }
+h2 { font-family:var(--display); font-weight:400; color:var(--ink); font-size:clamp(34px,8vw,52px); line-height:1.02; text-transform:uppercase; margin:0 0 16px; }
+h3 { font-family:var(--display); font-weight:400; color:var(--ink); font-size:26px; text-transform:uppercase; letter-spacing:.02em; margin:40px 0 10px; }
+.lede { font-size:19px; margin:0 0 24px; }
+.note { background:var(--sage-bg); border-left:6px solid var(--sage); padding:22px 26px; margin:0 0 26px; }
+.note-h { font-family:var(--display); color:#7E9277; letter-spacing:.14em; text-transform:uppercase; font-size:16px; margin:0 0 6px; }
+.note p:last-child { margin:0; }
+.meta { font-size:14px; color:var(--muted); margin-top:4px; }
+
+/* Steps */
+.steps { list-style:none; counter-reset:s; padding:0; margin:0; }
+.steps[start="7"] { counter-reset:s 6; }
+.steps li { counter-increment:s; position:relative; padding:0 0 22px 64px; }
+.steps li::before { content:counter(s,decimal-leading-zero); position:absolute; left:0; top:-2px; font-family:var(--display); color:var(--red); font-size:34px; line-height:1; }
+.steps h4 { margin:0 0 4px; color:var(--ink); font-size:19px; font-weight:700; }
+.steps p { margin:0; }
+
+/* Prompt block */
+.prompt { background:#FFFDF6; border:1px solid var(--line); margin:8px 0 30px; }
+.prompt-bar { position:sticky; top:var(--hdr,112px); z-index:5; display:flex; justify-content:space-between; align-items:center; gap:12px; background:var(--ink); padding:10px 10px 10px 18px; }
+.prompt-label { font-family:var(--display); color:var(--cream); letter-spacing:.12em; text-transform:uppercase; font-size:15px; }
+.copy-btn { font-family:var(--display); font-size:16px; letter-spacing:.1em; text-transform:uppercase; background:var(--red); color:var(--cream); border:0; padding:11px 18px; cursor:pointer; min-width:150px; white-space:nowrap; flex-shrink:0; }
+.copy-btn:hover { background:var(--red-deep); }
+.copy-btn.done { background:#5E7A55; }
+.prompt-body { margin:0; padding:20px 20px 24px; font-family:var(--mono); font-size:13.5px; line-height:1.6; color:var(--ink); white-space:pre-wrap; word-break:break-word; max-height:420px; overflow:auto; }
+.prompt-body.open { max-height:none; }
+.expand-btn { display:block; width:100%; background:var(--cream-2); color:var(--red); border:0; border-top:1px solid var(--line); padding:13px; font-family:var(--display); letter-spacing:.12em; text-transform:uppercase; font-size:15px; cursor:pointer; }
+.prompt.short .expand-btn { display:none; }
+
+.api-notes { margin:0; padding-left:20px; }
+.api-notes li { margin-bottom:8px; }
+code { font-family:var(--mono); font-size:.85em; background:var(--cream-2); padding:2px 6px; }
+
+/* CTA band */
+.band { background:var(--red); padding:72px 0; margin-top:48px; }
+.card { background:var(--cream); padding:40px 34px; }
+.card + .card { margin-top:32px; }
+.card h2 { font-size:clamp(32px,7vw,46px); }
+.card p { font-size:19px; margin:0 0 28px; }
+.btn { display:inline-block; background:var(--red); color:var(--cream); text-decoration:none; font-family:var(--display); font-size:clamp(17px,4.4vw,21px); letter-spacing:.1em; text-transform:uppercase; padding:20px 30px; }
+.btn:hover { background:var(--red-deep); }
+
+/* Footer */
+.footer { text-align:center; padding:56px 24px calc(56px + env(safe-area-inset-bottom,0px)); color:var(--muted); font-size:16px; line-height:1.7; }
+.footer .name { color:var(--ink); font-weight:700; font-size:18px; }
+.footer a { color:var(--red); text-decoration:none; font-weight:500; }
+.footer .copy { margin-top:22px; font-size:18px; }
+
+.toast { position:fixed; left:50%; bottom:calc(24px + env(safe-area-inset-bottom,0px)); transform:translate(-50%,20px); opacity:0; background:var(--ink); color:var(--cream); padding:12px 20px; font-size:15px; transition:.2s; pointer-events:none; z-index:99; }
+.toast.show { opacity:1; transform:translate(-50%,0); }
+
+@media (max-width:600px) {
+  body { font-size:17px; }
+  .nav { gap:6px 18px; } .nav a { font-size:13px; }
+  .hero { padding:48px 0 56px; }
+  .steps li { padding-left:52px; } .steps li::before { font-size:28px; }
+  .card { padding:32px 24px; }
+  .copy-btn { min-width:0; padding:10px 14px; font-size:15px; }
+  .prompt-label { font-size:13px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .toast { transition:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <a class="brand" href="#top">AI with Unnati</a>
+  <nav class="nav" aria-label="Guide sections">
+    <a href="#setup">API Setup</a>
+    <a href="#real-estate">Real Estate</a>
+    <a href="#lovestory">Lovestory</a>
+    <a href="#fitcheck">FitCheck</a>
+    <a href="https://higgsfield.ai/s/higgsfield-api-full-cashback-ig-aiwithunnati-NTeCYW" target="_blank" rel="noopener">Get Cashback</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="byline">
+      <span>A free guide by <strong>Unnati Tripathi</strong></span>
+      <a class="pill" href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@aiwithunnati</a>
+    </div>
+    <span class="tag">Higgsfield API 100% Cashback</span>
+    <h1>Build 3 AI apps with the Higgsfield API</h1>
+    <p class="lead">Connect the Higgsfield API to GPT Astra once, then paste any of these three prompts to build a real-estate staging workspace, a cinematic love-story film app, or a virtual try-on app. Every prompt has a copy button.</p>
+    <p class="partner">In partnership with <b>Higgsfield</b> and <b>ChatGPT GPT Astra</b></p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="source">
+    <b>Get the offer:</b> <a href="https://higgsfield.ai/s/higgsfield-api-full-cashback-ig-aiwithunnati-NTeCYW" target="_blank" rel="noopener">Claim Higgsfield API 100% cashback</a>
+    <span class="utm">https://higgsfield.ai/s/higgsfield-api-full-cashback-ig-aiwithunnati-NTeCYW</span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="note">
+      <p class="note-h">How this guide works</p>
+      <p>Part 1 connects the Higgsfield API to your GPT Astra project. It takes one setup prompt and one API key. After that, Part 2 gives you three full app-build prompts. Astra builds the interface, and Higgsfield generates the images and videos inside it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="setup">
+  <div class="wrap">
+    <p class="kicker">Part 1 · Start here</p>
+    <h2>Connect Higgsfield API to GPT Astra</h2>
+    <p class="lede">This is the simple setup. You only need to create the Higgsfield credentials once, keep the secret private, and then let Astra wire the API into the project.</p>
+    <ol class="steps" start="1"><li><h4>Open Higgsfield API</h4><p>Go to the official Higgsfield API site through <a href="https://higgsfield.ai/s/higgsfield-api-full-cashback-ig-aiwithunnati-NTeCYW" target="_blank" rel="noopener">my cashback link</a> and sign in. Open the API dashboard.</p></li><li><h4>Open API Keys</h4><p>In the left-side menu, choose <b>API keys</b>.</p></li><li><h4>Create a new key</h4><p>Choose <b>Create API key</b>. Give the key a clear name such as “Astra Project” or the name of the app you are building.</p></li><li><h4>Copy the credentials once</h4><p>Higgsfield shows the API key credentials when the key is created. Save the <b>Key ID</b> and <b>Secret</b> somewhere secure. The secret should not be placed in frontend code or committed to GitHub.</p></li><li><h4>Open your project in GPT Astra</h4><p>Open the ChatGPT/Astra coding workspace that contains the app you want to connect to Higgsfield.</p></li><li><h4>Paste the setup prompt below</h4><p>Give Astra the integration prompt below. It tells Astra to inspect the project first, read the current Higgsfield documentation, and use the correct model and request schema.</p></li></ol>
+    <div class="prompt">
+  <div class="prompt-bar">
+    <span class="prompt-label">Setup prompt</span>
+    <button class="copy-btn" type="button" data-target="pr-setup" aria-label="Copy Setup prompt">Copy prompt</button>
+  </div>
+  <pre id="pr-setup" class="prompt-body" tabindex="0">I want you to connect this project to the official Higgsfield API and handle the complete technical setup for me.
+
+Before changing the project:
+1. Inspect the codebase and identify the framework, package manager, backend/server structure, API routes, environment-variable setup, authentication, file uploads and the current generation workflow.
+2. Read the latest official Higgsfield API documentation before implementing anything.
+3. Verify the current authentication method, SDK, endpoint/model, request parameters, asynchronous job lifecycle, polling/webhook flow and result format.
+4. Keep all Higgsfield credentials server-side. Never place my API secret in browser code, React components, HTML, public logs or source control.
+
+Then implement the integration using the project&#x27;s existing conventions.
+
+Set up environment variables for the Higgsfield credentials, install the official supported client if appropriate, create one reusable server-side Higgsfield client, and connect the app&#x27;s Generate action to a server endpoint.
+
+Treat generation as asynchronous. Submit the request, save the request ID, track the job until it reaches a terminal state, then return and display the final result. Add clear loading, success and error states.
+
+Use the exact currently documented request schema for the selected Higgsfield model. Do not invent properties from memory.
+
+When I provide the API credentials, do not repeat the secret back to me. Configure it securely where possible. If you cannot store secrets securely in this environment, tell me exactly which environment-variable fields I need to populate myself.
+
+After implementation, run the relevant checks and give me a short summary of:
+- the model/endpoint used
+- files created or changed
+- environment variables required
+- how to start the project
+- how to trigger one test generation
+- where the final generated result appears
+
+Do not stop at instructions if you have access to the project. Implement the integration.</pre>
+  <button class="expand-btn" type="button" data-target="pr-setup">Show full prompt</button>
+</div>
+    <ol class="steps" start="7"><li><h4>Add the credentials securely</h4><p>When Astra asks for the Higgsfield credentials, use the project's server-side environment variables or secret manager. Do not paste the secret into browser-side code.</p></li><li><h4>Let Astra implement the connection</h4><p>Astra should create the server-side Higgsfield client, generation endpoint, job tracking and result handling using the current official API.</p></li><li><h4>Run one test generation</h4><p>Use the app's Generate button or the test action Astra creates. A successful request should move through queued/generating states and return the final image or video.</p></li><li><h4>Keep the API key private</h4><p>If a key is ever exposed publicly, revoke it in the Higgsfield API dashboard and create a new one.</p></li></ol>
+    <h3>Current Higgsfield API notes</h3>
+    <ul class="api-notes">
+      <li>Official REST base URL: <code>https://api.higgsfield.ai</code></li>
+      <li>REST authentication currently uses the key ID and secret in the Authorization header.</li>
+      <li>Higgsfield generation jobs are asynchronous, so the app should track the returned request ID until the result is ready.</li>
+      <li>The model catalog changes, so Astra should verify the current model and request schema before implementing.</li>
+    </ul>
+    <p>Official reference: <a href="https://open.higgsfield.ai/quick-start" target="_blank" rel="noopener">open.higgsfield.ai/quick-start</a></p>
+    <p class="meta">Verified against Higgsfield's API quick-start flow on 26 September 2026.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-bottom:0">
+  <div class="wrap">
+    <p class="kicker">Part 2 · The apps</p>
+    <h2>3 complete app-build prompts</h2>
+    <p class="lede">Each one is a full product spec. Tap <b>Copy prompt</b>, paste it into GPT Astra, and let it build.</p>
+  </div>
+</section>
+
+<section class="section" id="real-estate">
+  <div class="wrap">
+    <p class="kicker">App 01</p>
+    <h2>Real Estate AI Staging Workspace</h2>
+    <p class="lede">Property search + virtual staging + Higgsfield cinematic flythroughs. A dark AI-agent workspace that finds homes, furnishes empty rooms and turns listing photos into flythrough videos.</p>
+    <div class="note"><p class="note-h">Before you paste</p><p>Connect the Higgsfield API first (Part 1). Then paste this whole prompt into GPT Astra. If you have reference images or a reference video, upload them with the prompt.</p></div>
+    <div class="prompt">
+  <div class="prompt-bar">
+    <span class="prompt-label">Real Estate prompt</span>
+    <button class="copy-btn" type="button" data-target="pr-p1" aria-label="Copy Real Estate prompt">Copy prompt</button>
+  </div>
+  <pre id="pr-p1" class="prompt-body" tabindex="0">I want you to build a complete functional web app inspired exactly by the reference workflow I am providing.
+
+The product is an AI real-estate discovery and virtual-staging application. It combines a property-search interface with an AI agent and Higgsfield-generated property visualizations.
+
+Do not simplify this into a generic real-estate website. Recreate the actual experience described below.
+
+OBJECTIVE
+
+A real-estate professional should be able to:
+
+1. Search and browse houses.
+2. Select a house.
+3. Browse exterior and interior photographs.
+4. Take an empty/unfurnished room.
+5. Use AI to create a furnished/staged version.
+6. Generate cinematic property footage from the property photographs using Higgsfield.
+7. Repeat this for several homes.
+8. See the completed properties and generated media summarized at the end.
+
+The entire experience should feel like a sophisticated AI-agent workspace rather than a normal property listing site.
+
+DESKTOP LAYOUT
+
+Build the interface for a wide desktop browser first.
+
+Use a dark charcoal/near-black application shell.
+
+The screen should contain four major areas:
+
+A. LEFT PROPERTY SEARCH PANEL
+B. LARGE CENTRAL PROPERTY PREVIEW
+C. RIGHT AI AGENT ACTIVITY PANEL
+D. BOTTOM PROPERTY/WORKFLOW STRIP
+
+The layout must stay visible simultaneously so the user feels that several AI tasks are being coordinated inside one workspace.
+
+--------------------------------------------------
+A. LEFT PROPERTY SEARCH PANEL
+--------------------------------------------------
+
+Create a white Zillow-style property-search window embedded inside the dark app.
+
+Header:
+- Blue &quot;Zillow&quot; style wordmark
+- Search/location field
+- Filter controls
+- Location around Portland, Oregon
+- Search theme: modern homes
+
+Show vertically stacked property cards.
+
+Each card contains:
+- property thumbnail
+- price
+- property name
+- bedroom/bathroom information
+- location
+- short metadata
+
+Use three principal properties throughout the demo:
+
+1. Alder House
+2. Palm House
+3. Ridge House
+
+Use realistic modern architecture.
+
+Alder House:
+white modern rectangular house
+dark wood accents
+large windows
+small landscaped front area
+
+Palm House:
+low-profile California/desert modern villa
+swimming pool
+mountains or dry hills in the background
+large glass doors
+
+Ridge House:
+two-storey modern house
+strong orange timber section
+white structure
+black garage
+surrounded by greenery
+
+When a house becomes selected, clearly highlight its property listing.
+
+--------------------------------------------------
+B. CENTRAL PROPERTY PREVIEW
+--------------------------------------------------
+
+The middle of the application is the most visually important region.
+
+At the top:
+property name, for example:
+
+ALDER HOUSE
+
+Below:
+large 16:9 property-media viewer.
+
+Media should switch between:
+- exterior hero photographs
+- entrance
+- empty interior
+- kitchen
+- living room
+- pool
+- generated furnished room
+- generated property flythrough
+
+Add a very small status indicator in the upper-right region of the preview, communicating that AI/Higgsfield media is being generated or has completed.
+
+Under the main viewer add tiny metadata such as:
+- image source
+- generation state
+- room/property name
+- aspect ratio where appropriate
+
+Keep this understated.
+
+TRANSFORMATION BEHAVIOR
+
+For an empty interior:
+show the original bare room first.
+
+Then create a smooth AI transformation into a fully furnished premium interior.
+
+Do NOT change:
+- wall placement
+- windows
+- doors
+- ceiling height
+- room proportions
+- architecture
+- camera position
+
+Only furnish and style the existing room.
+
+Example staging style:
+quiet luxury
+warm beige
+cream sofa
+natural wood
+soft indirect lighting
+minimal contemporary furniture
+architectural-digest style
+photorealistic
+physically realistic shadows
+no strange furniture geometry
+
+The transformation should appear believable enough for a real-estate marketing presentation.
+
+--------------------------------------------------
+C. RIGHT AI AGENT PANEL
+--------------------------------------------------
+
+Create a narrow dark panel labelled like an advanced AI agent/workspace.
+
+Use a heading similar to:
+
+GPT-6 ASTRA
+
+This panel should display small stacked activity cards as the AI works.
+
+Possible states:
+- analyzing listing
+- inspecting property images
+- identifying unfurnished rooms
+- preparing staging
+- sending image to Higgsfield
+- generating flythrough
+- generation complete
+- owner outreach prepared
+- property completed
+
+The interface should update while the user is working through properties.
+
+Completed actions can turn subtly green.
+
+Do not make this panel bright or visually noisy.
+
+--------------------------------------------------
+D. BOTTOM WORKSPACE STRIP
+--------------------------------------------------
+
+Across the bottom display compact cards for the properties currently being processed.
+
+Each card should include:
+- thumbnail
+- property name
+- short status
+- location or short metadata
+
+Allow switching between Alder House, Palm House and Ridge House from here.
+
+Below or near this area include compact agent-action tiles such as:
+- browse
+- research
+- generate
+- contact
+- review
+
+The exact wording is less important than preserving the compact AI-workspace appearance.
+
+--------------------------------------------------
+HIGGSFIELD GENERATION PANEL
+--------------------------------------------------
+
+When the system decides to create AI media, open a dark modal inside the central area.
+
+Header:
+
+HIGGSFIELD
+
+Include:
+Image to video
+
+Controls should visually resemble:
+- selected input image thumbnail
+- resolution such as 1080p
+- 16:9 aspect ratio
+- generation/model/sequence selector
+- text prompt field
+- GENERATE button
+
+Keep it minimal and consistent with the dark UI.
+
+Example Higgsfield property prompt:
+
+&quot;Create a photorealistic cinematic real-estate flythrough from this exact property image. Preserve the architecture, windows, doors, materials, landscaping and room geometry exactly. Move the camera slowly and professionally as if filmed on a stabilized real-estate gimbal. No structural changes, no warped walls, no disappearing objects, no fantasy motion. Natural daylight, realistic reflections and physically accurate shadows. Premium architectural photography aesthetic.&quot;
+
+For furnished interiors:
+
+&quot;Using this exact unfurnished room as the structural reference, furnish it as a premium contemporary home while preserving every architectural detail and camera angle. Warm neutral interior, cream upholstery, natural timber, tasteful minimal decoration and soft realistic daylight. Then create a gentle cinematic push-in with subtle parallax. Absolutely no geometry changes.&quot;
+
+--------------------------------------------------
+DEMO SEQUENCE
+--------------------------------------------------
+
+Build the app so I can demonstrate approximately this sequence:
+
+0-2 sec:
+Alder House is selected.
+Exterior hero image visible.
+Property listings visible on left.
+AI-agent workspace visible.
+
+2-5 sec:
+Cycle from Alder House exterior into an empty interior.
+Show the room being virtually furnished.
+
+5-7 sec:
+Open Higgsfield generation modal.
+Show image-to-video controls.
+Start generation.
+
+7-8 sec:
+Generation completes.
+
+8-14 sec:
+Switch to Palm House.
+Show:
+exterior
+pool
+interior/kitchen
+generated staged interior
+
+Then open the Higgsfield generation state again.
+
+14-16 sec:
+Show that multiple properties have now been selected/processed.
+
+16-22 sec:
+Switch to Ridge House.
+Show:
+exterior
+front entrance
+interior
+finished furnished interior
+
+22-25 sec:
+Replace the central viewer with a results dashboard.
+
+Results screen should show three completed property cards:
+
+Alder House
+Palm House
+Ridge House
+
+Each card shows a generated interior/flythrough thumbnail.
+
+Add completion copy similar to:
+&quot;3 furnished flythroughs&quot;
+and an owner/outreach completion count.
+
+Include:
+&quot;Created with Higgsfield&quot;
+
+If generation costs are displayed, show them as small secondary metadata rather than the primary focus.
+
+--------------------------------------------------
+VISUAL STYLE
+--------------------------------------------------
+
+Desktop professional AI tool.
+
+Dark near-black shell.
+Dark gray panels.
+Fine borders.
+Small corner radii.
+Muted typography.
+White/gray primary text.
+Purple accent for AI controls.
+Green accent only for successful/completed states.
+
+The embedded Zillow-style result panel stays white, creating deliberate contrast.
+
+No large gradients.
+No cartoon graphics.
+No oversized SaaS headings.
+No bright blue generic dashboard components.
+
+Think:
+developer tool + autonomous AI agent + real-estate operations terminal.
+
+--------------------------------------------------
+INTERACTION AND MOTION
+--------------------------------------------------
+
+Use subtle motion only:
+
+150-250 ms UI transitions
+crossfade property media
+small loading indicators
+progress-state changes
+smooth modal appearance
+gentle preview zoom
+subtle hover states
+
+Generated property footage must look cinematic, not like UI animation.
+
+--------------------------------------------------
+IMPLEMENTATION
+--------------------------------------------------
+
+Create this as a real working web experience, not a static screenshot.
+
+Use:
+
+Next.js/React
+Tailwind CSS
+Framer Motion where appropriate
+
+Create reusable components for:
+
+PropertySearchPanel
+PropertyCard
+PropertyViewer
+AgentActivityPanel
+PropertyWorkspaceCard
+HiggsfieldGenerationModal
+ResultsSummary
+
+Use local mock listing data so the demo works immediately.
+
+Use high-quality temporary property imagery where necessary, but if reference property images are uploaded with this prompt, treat those images as the source of truth and use them instead.
+
+Higgsfield should handle the generated property/staging videos.
+
+Do not stop after creating a wireframe.
+
+Build the complete polished interface and make the complete demo flow functional.</pre>
+  <button class="expand-btn" type="button" data-target="pr-p1">Show full prompt</button>
+</div>
+  </div>
+</section>
+<section class="section" id="lovestory">
+  <div class="wrap">
+    <p class="kicker">App 02</p>
+    <h2>Lovestory: Through the Ages</h2>
+    <p class="lede">Two uploaded portraits become a four-era cinematic love story. Ancient Rome, the Middle Ages, the Wild West and a present-day wedding, stitched into one vertical film.</p>
+    <div class="note"><p class="note-h">Before you paste</p><p>Connect the Higgsfield API first (Part 1). Then paste this whole prompt into GPT Astra. If you have reference images or a reference video, upload them with the prompt.</p></div>
+    <div class="prompt">
+  <div class="prompt-bar">
+    <span class="prompt-label">Lovestory prompt</span>
+    <button class="copy-btn" type="button" data-target="pr-p2" aria-label="Copy Lovestory prompt">Copy prompt</button>
+  </div>
+  <pre id="pr-p2" class="prompt-body" tabindex="0">Build a complete working mobile-first AI application called:
+
+Lovestory
+
+The application turns photographs of two people into a short cinematic romantic film.
+
+I want the experience to match the visual design and interaction sequence described below extremely closely.
+
+The web version should display a realistic iPhone-style device centered on a black desktop browser canvas. The actual application runs inside the phone.
+
+The application must feel cinematic, emotional and premium, not like a normal AI generator.
+
+--------------------------------------------------
+OVERALL VISUAL LANGUAGE
+--------------------------------------------------
+
+Main app palette:
+
+very dark burgundy
+black cherry
+deep wine red
+warm cream
+muted champagne gold
+soft peach highlights
+
+Background:
+#17070D / similar very dark wine.
+
+Cards:
+slightly lighter burgundy.
+
+Primary button:
+warm champagne/cream-gold.
+
+Typography:
+
+Use an elegant editorial serif font for:
+titles
+film names
+section headings
+
+Use a clean small sans-serif for:
+instructions
+metadata
+buttons
+progress information
+
+Headings should use generous letter spacing.
+
+Think:
+old cinema
+romantic novel
+luxury wedding editorial
+period film titles
+
+Do NOT make it pink, childish or Valentine-themed.
+
+--------------------------------------------------
+HOME SCREEN
+--------------------------------------------------
+
+At the very top:
+
+Lovestory
+
+Underneath:
+a tiny romantic-film tagline.
+
+Large featured card:
+
+A FILM STARRING YOU TWO
+
+THROUGH
+THE AGES
+
+Tiny descriptive line underneath.
+
+Champagne colored CTA:
+
+Create our story
+
+Below:
+
+PICK A GENRE
+
+Display a 2 x 2 grid of genre cards.
+
+Card 1:
+Through the Ages
+romance across different historical eras
+
+Card 2:
+Fairytale / fantasy-style romance
+
+Card 3:
+Film Noir
+
+Card 4:
+90s Polaroid
+
+Each card should have:
+subtle textured/gradient image background
+small icon
+title
+one-line description
+
+Bottom navigation with approximately three destinations:
+
+Home
+My stories
+Profile
+
+Use tiny elegant icons.
+
+--------------------------------------------------
+STORY SETUP
+--------------------------------------------------
+
+When &quot;Through the Ages&quot; is selected, open the next screen.
+
+Top microheading:
+
+THROUGH THE AGES
+
+Large serif heading:
+
+THE LEADING ROLES
+
+Copy:
+
+&quot;Pick one clear photo of each of you -
+faces front and well lit.&quot;
+
+Create two adjacent portrait upload cards.
+
+Left:
+person one
+
+Right:
+person two
+
+Place a decorative ampersand between the photos.
+
+Selecting either photo opens the computer/mobile file chooser.
+
+Once uploaded, display the selected portrait directly in its card.
+
+Add a very small:
+
+Replace
+
+button over each image.
+
+Large champagne CTA below:
+
+See our looks
+
+Small privacy/supporting copy underneath:
+photos are used only to create your film
+
+--------------------------------------------------
+WARDROBE / STORY PREVIEW
+--------------------------------------------------
+
+Next screen:
+
+WARDROBE FITTING
+
+THROUGH THE AGES
+
+Small subtitle:
+
+Dressing you for each scene...
+
+Display a 2 x 2 scene layout.
+
+Scene I
+Ancient Rome
+
+Scene II
+Middle Ages
+
+Scene III
+Wild West
+
+Scene IV
+Present Day
+
+Initially show dark placeholders.
+
+Then progressively generate visual reference frames for the couple.
+
+Each generated scene should preserve both uploaded identities.
+
+After generation, show several cinematic preview images in a grid.
+
+Use golden/candlelit historical styling rather than generic AI portraits.
+
+Add a champagne CTA at the bottom to continue/create the film.
+
+--------------------------------------------------
+FILM GENERATION SCREEN
+--------------------------------------------------
+
+After confirmation show:
+
+a circular percentage indicator at the top
+
+NOW FILMING
+
+supporting copy such as:
+
+Rolling cameras...
+
+Then list each scene vertically:
+
+SCENE I
+Ancient Rome
+
+SCENE II
+Middle Ages
+
+SCENE III
+Wild West
+
+SCENE IV
+Present Day
+
+Each row includes:
+small generated thumbnail
+scene title
+percentage/progress
+thin progress bar
+
+Use the same dark wine palette.
+
+The large circular progress indicator advances as Higgsfield clips finish.
+
+Example visible progression:
+
+0%
+then roughly 20-30%
+then continue until complete.
+
+Supporting copy at the bottom:
+
+&quot;The scenes are rendering.
+Your film premieres here the moment it&#x27;s done.&quot;
+
+or similarly understated wording.
+
+--------------------------------------------------
+HIGGSFIELD GENERATION
+--------------------------------------------------
+
+Generate four short cinematic clips.
+
+The two uploaded portraits are STRICT CHARACTER REFERENCES.
+
+Identity persistence is essential.
+
+Do not redesign their faces between eras.
+
+Keep:
+eye shape
+nose
+jaw
+hair identity
+facial proportions
+skin tone
+gender presentation
+consistent.
+
+Only modify:
+wardrobe
+hair styling appropriate to the historical period
+environment
+lighting
+cinematic styling
+
+--------------------------------------------------
+SCENE 1 - ANCIENT ROME
+--------------------------------------------------
+
+Generate a luxury historical romance scene.
+
+Location:
+Roman villa / palace terrace
+cream stone columns
+ornate balustrades
+Mediterranean sunlight
+
+Woman:
+elegant Roman-inspired white flowing garment
+soft classical styling
+
+Man:
+period-appropriate noble Roman styling
+
+Cinematic actions:
+first establish the location
+slow reveal of one character
+gentle turn
+romantic eye contact
+subtle camera push-in
+
+Warm cream and gold color grade.
+
+No fantasy armor.
+No modern objects.
+
+--------------------------------------------------
+SCENE 2 - MIDDLE AGES
+--------------------------------------------------
+
+Dark romantic medieval atmosphere.
+
+Young couple dressed as noble medieval characters.
+
+Possible environment:
+castle
+wood interior
+stone hall
+warm candlelight
+
+Deep brown
+amber
+black
+muted gold
+
+Film them standing extremely close, exchanging quiet romantic looks.
+
+Slow cinematic camera motion.
+
+Shallow depth of field.
+
+No exaggerated fantasy costumes.
+
+--------------------------------------------------
+SCENE 3 - WILD WEST
+--------------------------------------------------
+
+Transform the same two characters into an elegant Western-era couple.
+
+Wardrobe:
+dark Western clothing
+period hat where appropriate
+natural brown leather and earth tones
+
+Environment:
+historic frontier architecture / period interior
+
+Golden-hour color grade.
+
+Include intimate couple close-ups.
+
+The faces must still obviously be the original two people.
+
+--------------------------------------------------
+SCENE 4 - PRESENT DAY
+--------------------------------------------------
+
+Modern romantic wedding sequence.
+
+Woman:
+elegant white wedding dress
+
+Man:
+black tuxedo
+
+Environment:
+luxury wedding venue
+warm lights
+white/gold floral details
+
+Create several moments:
+couple smiling
+close-up
+slow lean toward each other
+kiss
+celebratory wedding moment
+
+Use refined warm cinematic grading.
+
+Avoid generic stock-video movement.
+
+--------------------------------------------------
+FINAL FILM VIEWER
+--------------------------------------------------
+
+When rendering finishes, automatically transition into a vertical full-screen movie viewer inside the phone.
+
+Use approximately 9:16 video.
+
+The video should completely fill the phone screen.
+
+Overlay elegant tiny titles near the lower region.
+
+Film structure:
+
+Ancient Rome
+→ Medieval period
+→ Wild West
+→ Present-day wedding
+
+Use cinematic cuts/crossfades.
+
+Do not display obvious AI-generation controls while the film is playing.
+
+At the bottom of the movie viewer include three small pill controls, styled subtly over the video.
+
+The primary selected action uses champagne/gold.
+
+Other controls remain dark translucent gray.
+
+The phone remains centered on the black desktop background.
+
+--------------------------------------------------
+VIDEO AESTHETIC
+--------------------------------------------------
+
+The final generated film must feel like a romantic movie trailer.
+
+High-end cinematography.
+Realistic human anatomy.
+Natural facial movement.
+Subtle breathing and blinking.
+Controlled camera movement.
+Authentic fabric physics.
+Soft lens bloom.
+Shallow depth of field.
+Natural skin texture.
+
+Avoid:
+morphing faces
+extra fingers
+warped eyes
+face swapping during shots
+AI shimmer
+characters changing height
+random jewelry appearing
+unrealistic lip movement
+aggressive camera movement
+fantasy visual effects
+
+Keep shots short enough to maintain identity stability.
+
+--------------------------------------------------
+HIGGSFIELD WORKFLOW
+--------------------------------------------------
+
+Use Higgsfield for each four historical clips separately.
+
+Do not ask one model to create the complete multi-era film in a single generation.
+
+Generate:
+
+clip_01_ancient_rome
+clip_02_middle_ages
+clip_03_wild_west
+clip_04_present_day
+
+Use the uploaded two-person identity references for every clip.
+
+After all clips complete:
+
+combine them in order,
+apply gentle cinematic transitions,
+normalize exposure/color,
+add subtle music if audio generation is available,
+and render a single final vertical film.
+
+--------------------------------------------------
+DESKTOP PRESENTATION
+--------------------------------------------------
+
+When opened in a desktop browser:
+
+background around the phone must be almost completely black.
+
+Place the phone exactly in the center.
+
+Do not stretch the mobile UI into a desktop layout.
+
+Use a realistic dark iPhone body with:
+rounded corners
+thin metallic/dark bezel
+Dynamic Island at the top
+soft shadow underneath
+
+At certain moments desktop system file-picker dialogs may appear naturally when uploading portraits.
+
+--------------------------------------------------
+IMPLEMENTATION
+--------------------------------------------------
+
+Build the actual application.
+
+Suggested stack:
+
+Next.js
+React
+Tailwind
+Framer Motion
+
+Components:
+
+PhoneShell
+HomeScreen
+GenreCard
+CharacterUpload
+LeadingRolesScreen
+WardrobeScreen
+ScenePreviewCard
+FilmGenerationScreen
+CircularProgress
+SceneProgressRow
+FilmViewer
+
+State flow:
+
+HOME
+→ GENRE_SELECTED
+→ CHARACTER_UPLOAD
+→ WARDROBE_GENERATION
+→ SCENE_PREVIEW
+→ FILM_RENDERING
+→ FILM_READY
+→ FILM_PLAYER
+
+Persist uploaded character images throughout the workflow.
+
+Create elegant transitions between every state.
+
+Do not build a generic AI video generator.
+
+The emotional concept, historical progression, dark-burgundy UI and cinematic mobile presentation are essential to the product.</pre>
+  <button class="expand-btn" type="button" data-target="pr-p2">Show full prompt</button>
+</div>
+  </div>
+</section>
+<section class="section" id="fitcheck">
+  <div class="wrap">
+    <p class="kicker">App 03</p>
+    <h2>FitCheck Virtual Try-On</h2>
+    <p class="lede">Create one reusable avatar from a few selfies, then try any garment on the same person before buying it.</p>
+    <div class="note"><p class="note-h">Before you paste</p><p>Connect the Higgsfield API first (Part 1). Then paste this whole prompt into GPT Astra. If you have reference images or a reference video, upload them with the prompt.</p></div>
+    <div class="prompt">
+  <div class="prompt-bar">
+    <span class="prompt-label">FitCheck prompt</span>
+    <button class="copy-btn" type="button" data-target="pr-p3" aria-label="Copy FitCheck prompt">Copy prompt</button>
+  </div>
+  <pre id="pr-p3" class="prompt-body" tabindex="0">Build a complete working web application called:
+
+FitCheck
+
+The product is a virtual try-on app that lets a person create a reusable visual avatar from a few selfies, browse clothing, and instantly see garments rendered on their own body before buying them.
+
+I want the finished experience to closely match the supplied reference video in layout, flow, visual style, interactions, and pacing.
+
+Do not build a generic ecommerce website.
+
+The important concept is:
+
+A FEW SELFIES BECOME YOUR AVATAR.
+ANY GARMENT CAN THEN BE VISUALLY TRIED ON THAT AVATAR.
+
+The desktop site should stay visible in the background while a tall mobile phone-style product demo is shown on the right side of the hero section.
+
+--------------------------------------------------
+OVERALL DESKTOP DESIGN
+--------------------------------------------------
+
+Build a premium dark editorial website.
+
+Background:
+near-black charcoal
+
+Primary text:
+warm off-white / ivory
+
+Accent:
+acid-lime / yellow-green
+
+Borders:
+dark gray, very subtle
+
+Typography:
+
+Use an elegant editorial serif for the main headline.
+
+Use a clean modern sans-serif for navigation, labels, buttons and body copy.
+
+Avoid:
+bright gradients
+generic SaaS cards
+blue UI
+large rounded bubbly components
+
+The aesthetic should feel like:
+fashion editorial
+high-end ecommerce
+minimal AI product
+luxury clothing catalog
+
+--------------------------------------------------
+TOP NAVIGATION
+--------------------------------------------------
+
+Top-left:
+FitCheck wordmark
+
+Top-right navigation:
+How it works
+Why it wins
+GitHub
+
+Add a small bright lime control/icon at the far right.
+
+Keep the navigation very compact.
+
+--------------------------------------------------
+HERO SECTION
+--------------------------------------------------
+
+Left side:
+
+Small pill/eyebrow text such as:
+
+OPEN SOURCE VIRTUAL TRY-ON
+
+Large serif headline:
+
+See it on you before you
+buy it.
+
+Use a line break exactly around that structure.
+
+Body copy:
+
+A few selfies become your avatar. Any garment on the internet renders on your body in seconds. Love it? Buy it at the store - we take nothing from you.
+
+Below the copy, two compact buttons:
+
+Primary:
+Star on GitHub
+
+Secondary:
+Read the code
+
+The primary button should be warm white with a small lime accent.
+
+--------------------------------------------------
+RIGHT-SIDE PHONE DEMO
+--------------------------------------------------
+
+Place a tall dark smartphone mockup to the right of the hero copy.
+
+This phone contains the actual working try-on application.
+
+Use:
+thin black/dark-gray bezel
+large rounded corners
+minimal top status area
+dark internal background
+
+The phone UI should change throughout the workflow.
+
+--------------------------------------------------
+STEP 1 - START / CAMERA SETUP
+--------------------------------------------------
+
+Inside the phone show an onboarding sequence.
+
+Header:
+FitCheck
+
+Tiny progress indicator near the top.
+
+First screen:
+
+STEP 1 OF 4
+
+Look straight at it
+
+Supporting copy:
+
+The camera does the selfie part.
+
+Offer a button:
+
+Allow camera
+
+Below that:
+
+Choose photos from this computer
+
+The user should be able to either:
+
+A. open the camera
+or
+B. upload existing photographs
+
+Use compact white buttons and thin borders.
+
+--------------------------------------------------
+STEP 2 - ADD MORE ANGLES
+--------------------------------------------------
+
+Next onboarding screen:
+
+STEP 2 OF 4
+
+And the right
+
+or equivalent side-angle instruction.
+
+Explain that several angles help build the avatar.
+
+Display three or four small selfie thumbnails near the bottom once images have been selected.
+
+Include a large confirmation button such as:
+
+That&#x27;s enough
+
+The actual concept is:
+
+front image
+slight left/right angles
+clean upper-body/full-body reference
+
+Do not ask for excessive photos.
+
+--------------------------------------------------
+STEP 3 - BUILD AVATAR
+--------------------------------------------------
+
+After the photos are accepted, show a generation state.
+
+Center a circular portrait crop of the person.
+
+Text beneath:
+
+Locking your look
+
+Use a thin lime progress bar.
+
+The user&#x27;s identity should remain stable.
+
+This step creates a reusable full-body visual avatar from the supplied images.
+
+--------------------------------------------------
+AVATAR GENERATION REQUIREMENTS
+--------------------------------------------------
+
+Generate a clean full-body avatar using the user&#x27;s selfies.
+
+The avatar should:
+
+- preserve the face closely
+- preserve skin tone
+- retain realistic body proportions
+- maintain approximate body build
+- keep hair recognizable
+- use neutral standing posture
+- face mostly forward
+- show full body from head to feet
+
+Put the avatar against a simple pale studio wall/floor background.
+
+Use soft neutral lighting.
+
+Avoid:
+beautification
+dramatic body reshaping
+unrealistic slimming
+changing ethnicity
+changing facial structure
+AI glamour styling
+
+This avatar is meant to be useful for clothing visualization.
+
+--------------------------------------------------
+STEP 4 - CLOTHING BROWSER
+--------------------------------------------------
+
+Once avatar generation is complete, transition to the actual fashion interface.
+
+Header:
+FitCheck
+
+Top categories/chips can include:
+
+All
+Jackets
+Outerwear
+Tops
+Pants
+
+Display a two-column scrolling clothing catalog.
+
+Each garment card includes:
+
+- garment photograph
+- brand
+- garment name
+- price
+- bright lime Try on button
+
+Example visual categories from the reference:
+
+cream trench coat
+black jacket
+denim overshirt
+brown overcoat
+dark knitwear
+green bomber jacket
+striped top
+plain dark shirts
+light shirts
+
+The fashion photography should be clean ecommerce cutouts on cream or pale backgrounds.
+
+--------------------------------------------------
+TRY-ON INTERACTION
+--------------------------------------------------
+
+When the user taps &quot;Try on&quot;:
+
+1. Open a focused garment screen.
+2. Show the clothing item centered.
+3. Display generation text:
+
+Matching your light
+
+4. Use a thin lime progress bar.
+5. Generate a full-body image of the user&#x27;s avatar wearing the selected garment.
+
+The output screen should display the person large and centered.
+
+At the bottom use three pill buttons:
+
+Save to closet
+Share
+Buy
+
+Share should use the lime accent.
+Buy can be outlined/dark.
+
+--------------------------------------------------
+VIRTUAL TRY-ON GENERATION RULES
+--------------------------------------------------
+
+When applying clothing:
+
+PRESERVE:
+face
+hair
+skin tone
+body proportions
+pose
+camera angle
+hands
+legs
+background
+lighting direction
+
+CHANGE ONLY:
+the garment being tried on
+
+The chosen clothing needs to follow the body naturally.
+
+Preserve:
+fabric construction
+color
+pattern
+buttons
+zipper
+collar
+sleeves
+length
+logos if legally/technically possible from the supplied garment image
+
+Respect occlusion.
+
+For example:
+a long coat should actually extend to the appropriate length.
+a bomber jacket should not become a blazer.
+a green jacket should remain green.
+a loose garment should not become skin-tight.
+
+Create believable fabric folds and contact shadows.
+
+Avoid:
+extra limbs
+warped hands
+melting clothing
+incorrect collars
+duplicated buttons
+floating fabric
+changing the person&#x27;s face
+changing body shape between garments
+
+--------------------------------------------------
+REPEATED TRY-ON FLOW
+--------------------------------------------------
+
+The user can return to the catalog and test another garment.
+
+The reference demo cycles through several clothes.
+
+Example sequence:
+
+1. Black/dark jacket
+2. Browse catalog
+3. Green bomber/green outerwear
+4. Another dark outerwear look
+
+Each garment should reuse the SAME avatar.
+
+Do not regenerate the person from scratch each time.
+
+--------------------------------------------------
+BOTTOM PHONE NAVIGATION
+--------------------------------------------------
+
+Use three small destinations:
+
+Browse
+Closet
+You
+
+Keep icons tiny and understated.
+
+Browse opens the clothing catalog.
+Closet contains saved outfits.
+You contains avatar/profile settings.
+
+--------------------------------------------------
+DESKTOP PAGE BELOW HERO
+--------------------------------------------------
+
+The desktop page itself should also contain supporting editorial sections visible when scrolling.
+
+Include:
+
+HOW IT WORKS
+
+Three clean explanation cards:
+
+1. Take a few selfies
+2. Pick a garment
+3. See it on yourself
+
+Use fashion imagery alongside these.
+
+Then:
+
+THE CATALOG, ON YOUR BODY
+
+Show a horizontal selection of clothing/people imagery.
+
+Then:
+
+WHY IT WINS
+
+Use three compact metric cards similar to the reference style.
+
+Use figures only as editable demo content unless verified.
+
+Then:
+
+READ EVERY LINE
+
+A developer/open-source section showing code/GitHub-style information.
+
+Keep the same black fashion-editorial design.
+
+--------------------------------------------------
+HIGGSFIELD ROLE
+--------------------------------------------------
+
+Use Higgsfield only for image-generation / virtual try-on output.
+
+The web application itself should be built normally in React/Next.js.
+
+For each try-on generation:
+
+INPUT 1:
+user avatar/reference
+
+INPUT 2:
+garment image
+
+PROMPT STRUCTURE:
+
+&quot;Create a photorealistic virtual try-on using the supplied person as the immutable identity/body reference and the supplied garment as the immutable clothing reference. Keep the person&#x27;s face, hair, body proportions, pose, hands, legs, camera position, room, lighting and background unchanged. Replace only the existing upper-body clothing with the supplied garment. Reproduce the garment&#x27;s exact color, silhouette, collar, sleeves, closures, length, fabric weight and major visible details. Fit it naturally to the person&#x27;s body with physically plausible folds, contact shadows and occlusion. Do not alter anatomy or identity. Do not invent extra layers, accessories, logos or garment details.&quot;
+
+If the API provides a specialized virtual try-on or image-reference model, prefer that model over generic text-to-image.
+
+--------------------------------------------------
+APP STATE FLOW
+--------------------------------------------------
+
+LANDING
+→ PHOTO_UPLOAD
+→ ANGLE_CONFIRMATION
+→ AVATAR_BUILDING
+→ CATALOG
+→ GARMENT_SELECTED
+→ TRYON_GENERATING
+→ TRYON_RESULT
+→ CATALOG
+→ TRYON_RESULT
+
+Persist the avatar throughout the session.
+
+--------------------------------------------------
+IMPLEMENTATION
+--------------------------------------------------
+
+Use:
+
+Next.js
+React
+Tailwind CSS
+Framer Motion
+
+Suggested components:
+
+FitCheckLanding
+PhoneShell
+SelfieCapture
+SelfiePreviewStrip
+AvatarGeneration
+CatalogGrid
+GarmentCard
+TryOnLoading
+TryOnResult
+ClosetScreen
+ProfileScreen
+
+The application must work.
+
+Do not return a wireframe or a description.
+
+Build the complete interface, interactions, upload flow, reusable avatar state, garment catalog and Higgsfield generation integration.
+
+If I upload the original reference video with this prompt, analyze it and use its spacing, proportions and visual hierarchy as the primary visual reference.</pre>
+  <button class="expand-btn" type="button" data-target="pr-p3">Show full prompt</button>
+</div>
+  </div>
+</section>
+
+</main>
+
+<section class="band">
+  <div class="wrap">
+    <div class="card">
+      <p class="kicker">The offer</p>
+      <h2>Higgsfield API 100% Cashback</h2>
+      <p>Create your Higgsfield API key through my link and start building the three apps from this guide.</p>
+      <a class="btn" href="https://higgsfield.ai/s/higgsfield-api-full-cashback-ig-aiwithunnati-NTeCYW" target="_blank" rel="noopener">Claim the cashback</a>
+    </div>
+    <div class="card">
+      <p class="kicker">More free guides</p>
+      <h2>Follow @aiwithunnati</h2>
+      <p>New AI tools, prompts and free guides every week on Instagram.</p>
+      <a class="btn" href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="name">Unnati Tripathi</div>
+  <div>AI Educator &amp; Content Creator</div>
+  <div>CEO &amp; Co-Founder, Maester Labs</div>
+  <div><a href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener">@aiwithunnati</a></div>
+  <div class="copy">© 2026 Unnati Tripathi. All rights reserved.</div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var hdr = document.querySelector('.site-header');
+  function setHdr(){ document.documentElement.style.setProperty('--hdr', hdr.offsetHeight + 'px'); }
+  setHdr(); window.addEventListener('resize', setHdr);
+
+  var toast = document.getElementById('toast'), tt;
+  function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('show'); }, 1800); }
+
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly','');
+    ta.style.position='fixed'; ta.style.top='0'; ta.style.left='0'; ta.style.opacity='0'; ta.style.fontSize='16px';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+    var ok = false; try { ok = document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = document.getElementById(btn.dataset.target).textContent;
+      function done(ok){
+        if (ok) {
+          btn.textContent = 'Copied ✓'; btn.classList.add('done'); say('Prompt copied. Paste it into GPT Astra.');
+          setTimeout(function(){ btn.textContent = 'Copy prompt'; btn.classList.remove('done'); }, 2200);
+        } else { say('Copy blocked. Press and hold the text to copy it.'); }
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(fallbackCopy(text)); });
+      } else { done(fallbackCopy(text)); }
+    });
+  });
+
+  document.querySelectorAll('.expand-btn').forEach(function(btn){
+    var pre = document.getElementById(btn.dataset.target);
+    if (pre.scrollHeight <= pre.clientHeight + 4) { pre.parentNode.classList.add('short'); }
+    btn.addEventListener('click', function(){
+      var open = pre.classList.toggle('open');
+      btn.textContent = open ? 'Collapse prompt' : 'Show full prompt';
+      if (!open) pre.parentNode.scrollIntoView({block:'start'});
+    });
+  });
+
+  var links = document.querySelectorAll('.nav a[href^="#"]');
+  var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + hdr.offsetHeight + 40, idx = -1;
+    secs.forEach(function(s,i){ if (s && s.offsetTop <= y) idx = i; });
+    links.forEach(function(a,i){ a.classList.toggle('on', i === idx); });
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
